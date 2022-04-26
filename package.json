@@ -1,0 +1,23 @@
+{
+  "name": "test-spy-practice",
+  "version": "1.0.0",
+  "description": "Write tests for the code in `index.js` without implementing the higher-order functions or altering the code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlairHBris/test-spy-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlairHBris/test-spy-practice/issues"
+  },
+  "homepage": "https://github.com/BlairHBris/test-spy-practice#readme",
+  "dependencies": {
+    "jest": "^28.0.1"
+  }
+}
