@@ -87,3 +87,38 @@ describe("Tests for the filter function", () => {
         ]);
     });
 })
+
+function reduce(array, reducer, initial) {
+    let accumulation = initial
+
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i]
+        accumulation = reducer(accumulation, element)
+    }
+
+    return accumulation
+}
+
+describe("Tests for the reduce function", () => {
+    it("Combines all elements of an array when presented with an array of multiple numbers", () => {
+        const numbersArray = [1, 2, 3, 4];
+        const reducer = jest.fn(() => 10)
+
+        const accumulation = map(numbersArray, reducer);
+
+        expect(accumulation).toEqual([10]);
+    })
+})
+
+function log(message) {
+    console.log(`LOG: ${message}`)
+}
+
+describe("Tests for the log function", () => {
+    it("Logs a given message", () => {
+        const message = 'Hello World';
+        const result = log(message)
+
+        expect(result).toHaveBeenCalledWith('Hello World');
+    });
+})
