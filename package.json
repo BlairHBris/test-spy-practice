@@ -4,7 +4,8 @@
   "description": "Write tests for the code in `index.js` without implementing the higher-order functions or altering the code.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
