@@ -1,14 +1,4 @@
-function map(array, transform) {
-    const newArray = []
-
-    for (let i = 0; i < array.length; i++) {
-        const oldElement = array[i]
-        const newElement = transform(oldElement)
-        newArray.push(newElement)
-    }
-
-    return newArray
-}
+const { map, filter, reduce, log, someFunction } = require('./index')
 
 describe("Tests for the map function", () => {
     it("Returns a transformed array of items when given a single item", () => {
@@ -33,20 +23,6 @@ describe("Tests for the map function", () => {
         expect(newArray).toEqual([2, 4, 6]);
     });
 })
-
-function filter(array, predicate) {
-    const newArray = []
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]
-        if (predicate(element)) {
-            const newElement = JSON.parse(JSON.stringify(element))
-            newArray.push(newElement)
-        }
-    }
-
-    return newArray
-}
 
 describe("Tests for the filter function", () => {
     it("Returns only even numbers when given multiple numbers and an isEven function", () => {
@@ -88,37 +64,24 @@ describe("Tests for the filter function", () => {
     });
 })
 
-function reduce(array, reducer, initial) {
-    let accumulation = initial
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]
-        accumulation = reducer(accumulation, element)
-    }
-
-    return accumulation
-}
-
 describe("Tests for the reduce function", () => {
     it("Combines all elements of an array when presented with an array of multiple numbers", () => {
         const numbersArray = [1, 2, 3, 4];
         const reducer = jest.fn(() => 10)
 
-        const accumulation = map(numbersArray, reducer);
+        const accumulation = [reduce(numbersArray, reducer)]
 
         expect(accumulation).toEqual([10]);
     })
 })
 
-function log(message) {
-    console.log(`LOG: ${message}`)
-}
 
 describe("Tests for the log function", () => {
-    it("Logs a given message", () => {
-        const message = 'Hello World';
-        const result = log(message)
+    it("log calls a given function", () => {
+        console.log = jest.fn()
 
-        expect(result).toHaveBeenCalledWith('Hello World');
+        log('hello')
+
+        expect(console.log).toHaveBeenCalledWith('LOG: hello');
     });
 })

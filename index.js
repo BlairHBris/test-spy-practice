@@ -1,4 +1,4 @@
-export function map(array, transform){
+function map(array, transform){
   const newArray = []
 
   for (let i = 0; i < array.length; i++){
@@ -10,7 +10,7 @@ export function map(array, transform){
   return newArray
 }
 
-export function filter(array, predicate){
+function filter(array, predicate){
   const newArray = []
 
   for (let i = 0; i < array.length; i++){
@@ -24,7 +24,7 @@ export function filter(array, predicate){
   return newArray
 }
 
-export function reduce(array, reducer, initial){
+function reduce(array, reducer, initial){
   let accumulation = initial
 
   for (let i = 0; i < array.length; i++){
@@ -36,13 +36,21 @@ export function reduce(array, reducer, initial){
 }
 
 // Assert that `console.log` was called with the provided string:
-export function log(message){
+function log(message){
   console.log(`LOG: ${message}`)
 }
 
 // Assert that this function works:
-export function someFunction(someString, somePromise){
+function someFunction(someString, somePromise){
   return somePromise.then(someValue => {
     return `${someString}: ${someValue}`
   })
+}
+
+module.exports = {
+  map,
+  filter,
+  reduce,
+  log,
+  someFunction,
 }
