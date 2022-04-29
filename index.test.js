@@ -85,3 +85,11 @@ describe("Tests for the log function", () => {
         expect(console.log).toHaveBeenCalledWith('LOG: hello');
     });
 })
+
+describe("Tests for the someFunction function", () => {
+    it("someFunction works", () => {
+        const someString = 'hi'
+        const somePromise = jest.fn()
+
+    });
+})
