@@ -86,9 +86,7 @@ describe("Tests for the log function", () => {
     });
 })
 
-describe("Tests for the someFunction function", done => {
-    it("someFunction works", () => {
-        
-        
-    });
-})
+test("Tests for the someFunction function", async () => {
+    const result = await someFunction()
+    expect(result).toBe('hello')
+});
