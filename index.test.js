@@ -86,10 +86,9 @@ describe("Tests for the log function", () => {
     });
 })
 
-describe("Tests for the someFunction function", () => {
+describe("Tests for the someFunction function", done => {
     it("someFunction works", () => {
-        const someString = 'hi'
-        const somePromise = jest.fn()
-
+        
+        
     });
 })
